@@ -1,38 +1,12 @@
 provider "aws" {
-  region = "ap-south-1"
-}
-#Creating security groups and allow ssh, http and custom icmp
-resource "aws_security_group" "terraform_sg" {
-name = "terraform_sg"
-description = "allow ssh, http and cutom icmp traffic"
-ingress {
-from_port = 22
-to_port = 22
-protocol = "tcp"
-cidr_blocks = ["0.0.0.0/0"]
-}
-ingress {
-from_port = 80
-to_port = 80
-protocol = "tcp"
-cidr_blocks = ["0.0.0.0/0"]
-}
-ingress {
-from_port = 8080
-to_port = 8080
-protocol = "tcp"
-cidr_blocks = ["0.0.0.0/0"]
-}
-egress {
-from_port = 0
-to_port = 0
-protocol = "-1"
-cidr_blocks = ["0.0.0.0/0"]
-}
+  region     = "ap-south-1"
+  access_key = "AKIA6H3L55SP7Z76UOXQ"
+  secret_key = "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"
 }
 resource "aws_instance" "testterrafrom" {
      ami = "ami-08e0ca9924195beba"
-  instance_type = "t2.micro"
+    instance_type = "t2.micro"
+    key_name = "devops" 
    user_data = <<-EOF
              #!/bin/bash
              yum install java -y
