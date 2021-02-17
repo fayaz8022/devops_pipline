@@ -1,7 +1,7 @@
 provider "aws" {
   region     = "ap-south-1"
-  access_key = "AKIA6H3L55SP7Z76UOXQ"
-  secret_key = "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"
+  access_key = ""
+  secret_key = ""
 }
 resource "aws_instance" "testterrafrom" {
      ami = "ami-08e0ca9924195beba"
