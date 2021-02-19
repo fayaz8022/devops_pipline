@@ -10,7 +10,7 @@ provider "aws" {
   region = "ap-south-1"
 }
 resource "aws_s3_bucket" "b" {
-  bucket = "mywalfile"
+  bucket = "mywarfile"
   acl    = "private"
 
   tags = {
