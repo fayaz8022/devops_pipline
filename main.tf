@@ -18,7 +18,6 @@ resource "aws_s3_bucket" "b" {
     Environment = "Dev"
   }
 }
-
 resource "aws_instance" "testterrafrom" {
      ami = "ami-08e0ca9924195beba"
     instance_type = "t2.micro"
@@ -32,7 +31,6 @@ resource "aws_instance" "testterrafrom" {
              tar -xvf apache-tomcat-9.0.43.tar.gz
              ./apache-tomcat-9.0.43/bin/catalina.sh run
              yum install git -y
-             git clone https://github.com/fayaz8022/devopsdemo.git
              EOF
   tags = {
     Name = "tomcat_container"
