@@ -30,7 +30,7 @@ resource "aws_instance" "testterrafrom" {
              wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.43/bin/apache-tomcat-9.0.43.tar.gz
              tar -xvf apache-tomcat-9.0.43.tar.gz
              ./apache-tomcat-9.0.43/bin/catalina.sh run
-             yum install git -y
+             
              EOF
   tags = {
     Name = "tomcat_container"
