@@ -7,7 +7,9 @@ terraform {
   }
 }
 provider "aws" {
-  region = "ap-south-1"
+  region                  = "ap-south-1"
+  shared_credentials_file = "C:/Users/syed fayaz/.aws/credentials"
+  profile                 = "terraform"
 }
 resource "aws_s3_bucket" "b" {
   bucket = "mywarfile"
@@ -19,10 +21,10 @@ resource "aws_s3_bucket" "b" {
   }
 }
 resource "aws_instance" "testterrafrom" {
-     ami = "ami-08e0ca9924195beba"
-    instance_type = "t2.micro"
-    key_name = "devops" 
-   user_data = <<-EOF
+  ami           = "ami-08e0ca9924195beba"
+  instance_type = "t2.micro"
+  key_name      = "devops"
+  user_data     = <<-EOF
              #!/bin/bash
              yum install java -y
              yum install wget -y
@@ -30,9 +32,5 @@ resource "aws_instance" "testterrafrom" {
              wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.43/bin/apache-tomcat-9.0.43.tar.gz
              tar -xvf apache-tomcat-9.0.43.tar.gz
              ./apache-tomcat-9.0.43/bin/catalina.sh run
-             
              EOF
-  tags = {
-    Name = "tomcat_container"
-  }
 }
