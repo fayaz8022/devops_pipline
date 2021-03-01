@@ -7,9 +7,7 @@ terraform {
   }
 }
 provider "aws" {
-  region                  = "ap-south-1"
-  shared_credentials_file = "C:/Users/syed fayaz/.aws/credentials"
-  profile                 = "terraform"
+  region = "ap-south-1"
 }
 resource "aws_s3_bucket" "b" {
   bucket = "mywarfile"
