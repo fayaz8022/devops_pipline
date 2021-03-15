@@ -16,7 +16,7 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+    goals: 'clean install'
 - task: Docker@2
   inputs:
     repository: 'sayedfayaz8022 / azuredevops'
