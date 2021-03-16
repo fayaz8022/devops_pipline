@@ -7,7 +7,7 @@ terraform {
   }
 }
 provider "aws" {
-  region = "ap-south-1"
+  region = "ap-south-22"
 }
 resource "aws_s3_bucket" "b" {
   bucket = "mywarfile"
